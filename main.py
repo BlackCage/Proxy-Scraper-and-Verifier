@@ -8,7 +8,7 @@ checker = ProxyInformation(timeout=2)
 # Function to write a proxy to a file based on its type
 def write_to_file(proxy, proxy_type):
     if proxy:
-        with open(f"./proxies/{proxy_type}.txt", "a") as file:
+        with open(f"./Proxies/{proxy_type}.txt", "a") as file:
             file.write(proxy + "\n")
 
 # Function to check a group of proxies
@@ -26,7 +26,7 @@ def main():
     scraper = ProxyScraper()
     scraper.run_scraper()
     
-    with open("./tmp/proxies.txt", "r", encoding="utf-8") as file:
+    with open("./Proxies/Not_Processed/proxies.txt", "r", encoding="utf-8") as file:
         # Read the list of proxies from the file and remove leading/trailing whitespace
         proxies = [line.strip() for line in file]
 
