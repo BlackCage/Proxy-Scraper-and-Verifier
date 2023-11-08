@@ -5,7 +5,7 @@ import concurrent.futures
 
 class ProxyScraper:
     def __init__(self):
-        self.output_file = "./tmp/proxies.txt"
+        self.output_file = "./Proxies/Not_Processed/proxies.txt"
         self.urls_and_parsers = [
             ("https://www.proxy-list.download/api/v1/get?type=http", self._parse_proxy_list_download),
             ("https://www.proxy-list.download/api/v1/get?type=https", self._parse_proxy_list_download),
@@ -56,9 +56,9 @@ class ProxyScraper:
             f.writelines("\n".join(clean_lines))
 
     def _write(self, proxies):
-        if not "proxies.txt" in os.listdir("./tmp/"):
-            open("./tmp/proxies.txt", "w").close()
-        with open("./tmp/proxies.txt", "a") as f:
+        if not "proxies.txt" in os.listdir("./Proxies/Not_Processed/"):
+            open(self.output_file, "w").close()
+        with open(self.output_file, "a") as f:
             f.write(f"{proxies}\n")
 
     def _scrape_and_write_proxies(self, url, parser):
