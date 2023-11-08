@@ -1,3 +1,4 @@
+import re
 import concurrent.futures
 from scrapeProxies import ProxyScraper
 from proxy_information import ProxyInformation
@@ -8,8 +9,10 @@ checker = ProxyInformation(timeout=2)
 # Function to write a proxy to a file based on its type
 def write_to_file(proxy, proxy_type):
     if proxy:
-        with open(f"./Proxies/{proxy_type}.txt", "a") as file:
-            file.write(proxy + "\n")
+        # Verifica si la línea es un proxy IP:puerto válido antes de escribirla
+        if re.match(r'\d+\.\d+\.\d+\.\d+:\d+', proxy):
+            with open(f"./Proxies/{proxy_type}.txt", "a") as file:
+                file.write(proxy + "\n")
 
 # Function to check a group of proxies
 def check_proxies(proxy_group):
