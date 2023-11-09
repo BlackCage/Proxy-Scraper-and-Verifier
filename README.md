@@ -59,3 +59,13 @@ Here are a few ways you can contribute:
 Your active involvement in the growth of this project is truly appreciated, and it is through your support that we can continue to provide valuable resources to the community. Thank you for being a part of this journey.
 
 ![GitHub Stars](https://img.shields.io/github/stars/BlackCage/Proxy-Scraper-and-Verifier?style=social)
+
+## Changelog
+
+### Version 0.2
+  - **Optimization**: Reorganized and simplified the proxy checking and writing process.
+  - **Consistency**: Unified naming conventions for functions and variables for better clarity.
+  - **File Handling**: Streamlined file writing within the `write_proxy_to_file` function.
+  - **Concurrency**: Improved parallel execution with ThreadPoolExecutor for checking multiple proxies simultaneously.
+  - **Readability**: Enhanced code readability and removed redundant checks for proxy validity.
+  - **Documentation**: Updated comments and docstrings for a more informative codebase.
